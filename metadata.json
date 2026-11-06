@@ -1,0 +1,6 @@
+{
+  "name": "ATELIER NOIR | Haute Tattoo Studio",
+  "description": "Premium dark-themed bespoke tattoo studio featuring fine line, realism, black & grey, and custom permanent artistry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
