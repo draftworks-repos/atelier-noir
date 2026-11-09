@@ -1,6 +1,11 @@
-import React from 'react';
-import { ArrowUpRight, Award, Calendar, Sparkles } from 'lucide-react';
-import { ARTISTS, GALLERY_ITEMS, Artist, GalleryItem } from '../data/studioData';
+import React from "react";
+import { ArrowUpRight, Award, Calendar, Sparkles } from "lucide-react";
+import {
+  ARTISTS,
+  GALLERY_ITEMS,
+  Artist,
+  GalleryItem,
+} from "../data/studioData";
 
 interface ArtistsPageProps {
   onNavigate: (page: string) => void;
@@ -21,7 +26,7 @@ export const ArtistsPage: React.FC<ArtistsPageProps> = ({
       <section className="relative min-h-[60vh] flex items-center pt-28 pb-16 px-0 lg:px-8 overflow-hidden bg-[#0B0B0D]">
         <div className="absolute inset-0 z-0">
           <img
-            src="/src/assets/images/artist_master_portrait_1793799071792.jpg"
+            src="/assets/images/artist_master_portrait_1793799071792.jpg"
             alt="Master artisan at Atelier Noir"
             className="w-full h-full object-cover object-top filter brightness-[0.38] contrast-[1.1]"
             referrerPolicy="no-referrer"
@@ -39,7 +44,9 @@ export const ArtistsPage: React.FC<ArtistsPageProps> = ({
               <span className="text-[#D42C25]">BEHIND THE INK.</span>
             </h1>
             <p className="text-base sm:text-lg text-[#A5A3A0] leading-relaxed max-w-2xl font-light">
-              Our resident collective unites four master draughtsmen and fine artists, each maintaining their own rigorous aesthetic domain and booking independently through our studio concierge.
+              Our resident collective unites four master draughtsmen and fine
+              artists, each maintaining their own rigorous aesthetic domain and
+              booking independently through our studio concierge.
             </p>
           </div>
         </div>
@@ -78,7 +85,9 @@ export const ArtistsPage: React.FC<ArtistsPageProps> = ({
                 <div>
                   <div className="flex items-center justify-between text-xs text-[#D42C25] uppercase tracking-wider font-semibold mb-1">
                     <span>{artist.role}</span>
-                    <span className="text-[#A5A3A0]">{artist.experienceYears}y craft</span>
+                    <span className="text-[#A5A3A0]">
+                      {artist.experienceYears}y craft
+                    </span>
                   </div>
                   <h3 className="text-2xl font-bold font-serif-cinzel text-[#F3F0E9] mb-1">
                     {artist.name}
@@ -131,7 +140,7 @@ export const ArtistsPage: React.FC<ArtistsPageProps> = ({
             </h2>
           </div>
           <button
-            onClick={() => onNavigate('gallery')}
+            onClick={() => onNavigate("gallery")}
             className="cursor-pointer inline-flex items-center gap-2 text-sm text-[#A5A3A0] hover:text-[#F3F0E9] transition-colors"
           >
             <span>View Full Studio Gallery</span>
@@ -168,7 +177,11 @@ export const ArtistsPage: React.FC<ArtistsPageProps> = ({
                   {item.title}
                 </h3>
                 <p className="text-xs text-[#A5A3A0] mt-1">
-                  Crafted by <strong className="text-[#F3F0E9] font-medium">{item.artist}</strong> · {item.placement}
+                  Crafted by{" "}
+                  <strong className="text-[#F3F0E9] font-medium">
+                    {item.artist}
+                  </strong>{" "}
+                  · {item.placement}
                 </p>
               </div>
             </div>
@@ -186,11 +199,13 @@ export const ArtistsPage: React.FC<ArtistsPageProps> = ({
             BOOK DIRECTLY WITH YOUR PREFERRED ARTIST
           </h2>
           <p className="text-sm sm:text-base text-[#A5A3A0] max-w-xl mx-auto leading-relaxed">
-            Have a particular artist in mind? Let us know on the consultation form. Our concierge will pair your concept directly with their schedule.
+            Have a particular artist in mind? Let us know on the consultation
+            form. Our concierge will pair your concept directly with their
+            schedule.
           </p>
           <div className="pt-2">
             <button
-              onClick={() => onNavigate('contact')}
+              onClick={() => onNavigate("contact")}
               className="cursor-pointer inline-flex items-center gap-2 bg-[#D42C25] hover:bg-[#b8231d] text-white px-8 py-3.5 rounded-full font-semibold text-xs uppercase tracking-wider transition-all shadow-xl shadow-[#D42C25]/25"
             >
               <span>Submit Artist Booking Request</span>

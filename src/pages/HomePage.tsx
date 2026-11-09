@@ -1,5 +1,13 @@
-import React from 'react';
-import { ArrowUpRight, ArrowRight, Star, ShieldCheck, Sparkles, HeartHandshake, Award } from 'lucide-react';
+import React from "react";
+import {
+  ArrowUpRight,
+  ArrowRight,
+  Star,
+  ShieldCheck,
+  Sparkles,
+  HeartHandshake,
+  Award,
+} from "lucide-react";
 import {
   POPULAR_STYLES,
   ARTISTS,
@@ -9,7 +17,7 @@ import {
   REVIEWS,
   Artist,
   GalleryItem,
-} from '../data/studioData';
+} from "../data/studioData";
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -29,7 +37,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         {/* Background photo & scrim */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/src/assets/images/hero_cinematic_tattoo_1793799069695.jpg"
+            src="/assets/images/hero_cinematic_tattoo_1793799069695.jpg"
             alt="Atelier tattoo artist at work"
             className="w-full h-full object-cover object-center filter  contrast-[1.12]"
             referrerPolicy="no-referrer"
@@ -50,12 +58,14 @@ export const HomePage: React.FC<HomePageProps> = ({
             </h1>
 
             <p className="text-base sm:text-xl text-[#A5A3A0] leading-relaxed max-w-2xl font-light">
-              An intimate studio sanctuary bridging classical fine art, anatomical realism, and modern single-needle precision. Every permanent composition is bespoke, clinical, and uncompromising.
+              An intimate studio sanctuary bridging classical fine art,
+              anatomical realism, and modern single-needle precision. Every
+              permanent composition is bespoke, clinical, and uncompromising.
             </p>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
               <button
-                onClick={() => onNavigate('contact')}
+                onClick={() => onNavigate("contact")}
                 className="cursor-pointer group inline-flex items-center justify-center gap-2.5 bg-[#D42C25] hover:bg-[#b8231d] text-white px-8 py-4 rounded-full font-semibold text-sm uppercase tracking-wider transition-all duration-200 shadow-xl shadow-[#D42C25]/25 hover:shadow-[#D42C25]/45 hover:-translate-y-0.5 active:translate-y-0"
               >
                 <span>Book a Consultation</span>
@@ -63,7 +73,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               </button>
 
               <button
-                onClick={() => onNavigate('gallery')}
+                onClick={() => onNavigate("gallery")}
                 className="cursor-pointer inline-flex items-center justify-center gap-2 bg-[#141416]/90 hover:bg-[#1A1A1D] text-[#F3F0E9] border border-[rgba(255,255,255,0.14)] hover:border-[rgba(255,255,255,0.25)] px-8 py-4 rounded-full font-medium text-sm transition-all duration-200"
               >
                 <span>Explore Our Work</span>
@@ -80,7 +90,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           {/* Rounded photograph */}
           <div className="relative rounded-3xl overflow-hidden bg-[#141416] border border-[rgba(255,255,255,0.09)] group aspect-[4/3] lg:aspect-auto lg:h-[500px]">
             <img
-              src="/src/assets/images/studio_atelier_interior_1793799069847.jpg"
+              src="/assets/images/studio_atelier_interior_1793799069847.jpg"
               alt="Atelier Noir studio workspace"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               referrerPolicy="no-referrer"
@@ -102,14 +112,20 @@ export const HomePage: React.FC<HomePageProps> = ({
               ART THAT TELLS YOUR STORY.
             </h2>
             <p className="text-[#A5A3A0] leading-relaxed text-base sm:text-lg">
-              Atelier Noir was founded to challenge the crowded, hurried standard of traditional street shops. We operate as an intimate creative studio where clients sit directly with master draughtsmen and fine artists.
+              Atelier Noir was founded to challenge the crowded, hurried
+              standard of traditional street shops. We operate as an intimate
+              creative studio where clients sit directly with master draughtsmen
+              and fine artists.
             </p>
             <p className="text-[#A5A3A0] leading-relaxed text-sm sm:text-base">
-              Every appointment is scheduled with generous time buffers to preserve an unhurried, focused environment. From initial anatomical stencil sizing to post-procedure barrier healing, we treat tattooing as permanent gallery-grade craftsmanship.
+              Every appointment is scheduled with generous time buffers to
+              preserve an unhurried, focused environment. From initial
+              anatomical stencil sizing to post-procedure barrier healing, we
+              treat tattooing as permanent gallery-grade craftsmanship.
             </p>
             <div className="pt-2">
               <button
-                onClick={() => onNavigate('about')}
+                onClick={() => onNavigate("about")}
                 className="cursor-pointer group inline-flex items-center gap-2 text-sm font-semibold text-[#F3F0E9] hover:text-[#D42C25] transition-colors"
               >
                 <span>Learn More About Our Philosophy</span>
@@ -132,7 +148,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             </h2>
           </div>
           <button
-            onClick={() => onNavigate('services')}
+            onClick={() => onNavigate("services")}
             className="cursor-pointer group inline-flex items-center gap-2 text-sm font-medium text-[#A5A3A0] hover:text-[#F3F0E9] transition-colors"
           >
             <span>View All Services & Styles</span>
@@ -144,7 +160,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           {POPULAR_STYLES.map((style) => (
             <div
               key={style.id}
-              onClick={() => onNavigate('services')}
+              onClick={() => onNavigate("services")}
               className="group cursor-pointer rounded-2xl bg-[#1A1A1D] border border-[rgba(255,255,255,0.08)] hover:border-[rgba(255,255,255,0.22)] p-4 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/60"
             >
               {/* Rounded image container (14-20px) */}
@@ -173,7 +189,10 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="w-full overflow-hidden py-8 sm:py-10 bg-[#141416] border-y border-[rgba(255,255,255,0.09)] select-none">
         <div className="animate-marquee flex items-center gap-12 text-[#F3F0E9] whitespace-nowrap">
           {[1, 2, 3].map((loopIdx) => (
-            <div key={loopIdx} className="flex items-center gap-12 font-serif-cinzel text-xl sm:text-2xl lg:text-3xl font-bold tracking-[0.18em]">
+            <div
+              key={loopIdx}
+              className="flex items-center gap-12 font-serif-cinzel text-xl sm:text-2xl lg:text-3xl font-bold tracking-[0.18em]"
+            >
               <span>BLACK & GREY</span>
               <span className="text-[#D42C25]">·</span>
               <span>REALISM</span>
@@ -203,7 +222,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             </h2>
           </div>
           <button
-            onClick={() => onNavigate('gallery')}
+            onClick={() => onNavigate("gallery")}
             className="cursor-pointer group inline-flex items-center gap-2 text-sm font-semibold text-[#D42C25] hover:text-[#f35953] transition-colors"
           >
             <span>View Full Gallery</span>
@@ -261,7 +280,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             </h2>
           </div>
           <button
-            onClick={() => onNavigate('artists')}
+            onClick={() => onNavigate("artists")}
             className="cursor-pointer group inline-flex items-center gap-2 text-sm font-medium text-[#A5A3A0] hover:text-[#F3F0E9] transition-colors"
           >
             <span>View All Artist Resumes</span>
@@ -426,7 +445,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           {/* Subtle background photo */}
           <div className="absolute inset-0 z-0 opacity-20">
             <img
-              src="/src/assets/images/hero_cinematic_tattoo_1793799069695.jpg"
+              src="/assets/images/hero_cinematic_tattoo_1793799069695.jpg"
               alt="Background pattern"
               className="w-full h-full object-cover object-center"
               referrerPolicy="no-referrer"
@@ -442,11 +461,13 @@ export const HomePage: React.FC<HomePageProps> = ({
               READY FOR YOUR NEXT TATTOO?
             </h2>
             <p className="text-[#A5A3A0] text-sm sm:text-base leading-relaxed">
-              Whether you possess a fully mapped conceptual brief or wish to develop an idea directly with one of our master artisans, our studio concierge will guide every step.
+              Whether you possess a fully mapped conceptual brief or wish to
+              develop an idea directly with one of our master artisans, our
+              studio concierge will guide every step.
             </p>
             <div className="pt-4">
               <button
-                onClick={() => onNavigate('contact')}
+                onClick={() => onNavigate("contact")}
                 className="cursor-pointer group inline-flex items-center gap-2.5 bg-[#D42C25] hover:bg-[#b8231d] text-white px-9 py-4 rounded-full font-semibold text-sm uppercase tracking-wider transition-all duration-200 shadow-xl shadow-[#D42C25]/25 hover:shadow-[#D42C25]/45 hover:-translate-y-0.5 active:translate-y-0"
               >
                 <span>Book Your Consultation</span>

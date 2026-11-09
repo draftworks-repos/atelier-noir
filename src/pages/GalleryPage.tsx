@@ -1,28 +1,34 @@
-import React, { useState } from 'react';
-import { ArrowUpRight, Filter } from 'lucide-react';
-import { GALLERY_ITEMS, GalleryItem } from '../data/studioData';
-import { filterGalleryItems } from '../utils/booking';
+import React, { useState } from "react";
+import { ArrowUpRight, Filter } from "lucide-react";
+import { GALLERY_ITEMS, GalleryItem } from "../data/studioData";
+import { filterGalleryItems } from "../utils/booking";
 
 interface GalleryPageProps {
   onNavigate: (page: string) => void;
   onOpenLightbox: (item: GalleryItem) => void;
 }
 
-export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate, onOpenLightbox }) => {
-  const [activeFilter, setActiveFilter] = useState('All Work');
+export const GalleryPage: React.FC<GalleryPageProps> = ({
+  onNavigate,
+  onOpenLightbox,
+}) => {
+  const [activeFilter, setActiveFilter] = useState("All Work");
 
   const filterOptions = [
-    'All Work',
-    'Black & Grey',
-    'Realism',
-    'Fine Line',
-    'Blackwork',
-    'Custom',
-    'Neo Traditional',
+    "All Work",
+    "Black & Grey",
+    "Realism",
+    "Fine Line",
+    "Blackwork",
+    "Custom",
+    "Neo Traditional",
   ];
 
   const filteredItems = filterGalleryItems(GALLERY_ITEMS, activeFilter);
-  const featuredPieces = GALLERY_ITEMS.filter((item) => item.isFeatured).slice(0, 2);
+  const featuredPieces = GALLERY_ITEMS.filter((item) => item.isFeatured).slice(
+    0,
+    2,
+  );
 
   return (
     <div className="space-y-20 sm:space-y-28 pb-20">
@@ -30,7 +36,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate, onOpenLigh
       <section className="relative min-h-[55vh] flex items-center pt-28 pb-14 px-0 lg:px-8 overflow-hidden bg-[#0B0B0D]">
         <div className="absolute inset-0 z-0">
           <img
-            src="/src/assets/images/tattoo_realism_portrait_1793799071055.jpg"
+            src="/assets/images/tattoo_realism_portrait_1793799071055.jpg"
             alt="Realism tattoo gallery showcase"
             className="w-full h-full object-cover object-center filter brightness-[0.38] contrast-[1.1]"
             referrerPolicy="no-referrer"
@@ -48,7 +54,9 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate, onOpenLigh
               <span className="text-[#D42C25]">HAS A STORY.</span>
             </h1>
             <p className="text-sm sm:text-base text-[#A5A3A0] leading-relaxed font-light">
-              Explore our curated portfolio of bespoke commissions. Each work is custom drafted for body anatomy, photographed in true studio light.
+              Explore our curated portfolio of bespoke commissions. Each work is
+              custom drafted for body anatomy, photographed in true studio
+              light.
             </p>
           </div>
         </div>
@@ -71,8 +79,8 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate, onOpenLigh
                   onClick={() => setActiveFilter(filter)}
                   className={`cursor-pointer px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all duration-200 whitespace-nowrap ${
                     isActive
-                      ? 'bg-[#1A1A1D] text-[#F3F0E9] font-semibold shadow-md border border-[rgba(255,255,255,0.12)] text-[#D42C25]'
-                      : 'text-[#A5A3A0] hover:text-[#F3F0E9] hover:bg-[#1A1A1D]/50'
+                      ? "bg-[#1A1A1D] text-[#F3F0E9] font-semibold shadow-md border border-[rgba(255,255,255,0.12)] text-[#D42C25]"
+                      : "text-[#A5A3A0] hover:text-[#F3F0E9] hover:bg-[#1A1A1D]/50"
                   }`}
                 >
                   {filter}
@@ -125,7 +133,9 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate, onOpenLigh
                   </div>
                   <div className="pt-2 text-xs text-[#A5A3A0] flex items-center justify-between border-t border-[rgba(255,255,255,0.06)] mt-3">
                     <span>{item.artist}</span>
-                    <span className="text-[11px] text-[#A5A3A0]/80">{item.placement}</span>
+                    <span className="text-[11px] text-[#A5A3A0]/80">
+                      {item.placement}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -171,7 +181,11 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate, onOpenLigh
                   {piece.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-[#A5A3A0]">
-                  Artisan: <strong className="text-[#F3F0E9] font-medium">{piece.artist}</strong> · {piece.placement}
+                  Artisan:{" "}
+                  <strong className="text-[#F3F0E9] font-medium">
+                    {piece.artist}
+                  </strong>{" "}
+                  · {piece.placement}
                 </p>
               </div>
             </div>
@@ -189,11 +203,12 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate, onOpenLigh
             YOUR IDEA COULD BE NEXT.
           </h2>
           <p className="text-sm sm:text-base text-[#A5A3A0] max-w-xl mx-auto leading-relaxed">
-            Every piece in our gallery began as a simple thought or rough reference. Let's translate your story into permanent skin art.
+            Every piece in our gallery began as a simple thought or rough
+            reference. Let's translate your story into permanent skin art.
           </p>
           <div className="pt-2">
             <button
-              onClick={() => onNavigate('contact')}
+              onClick={() => onNavigate("contact")}
               className="cursor-pointer inline-flex items-center gap-2 bg-[#D42C25] hover:bg-[#b8231d] text-white px-8 py-3.5 rounded-full font-semibold text-xs uppercase tracking-wider transition-all shadow-xl shadow-[#D42C25]/25"
             >
               <span>Begin Your Consultation</span>

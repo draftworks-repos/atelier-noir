@@ -135,7 +135,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
       <section className="relative min-h-[55vh] flex items-center pt-28 pb-14 px-0 lg:px-8 overflow-hidden bg-[#0B0B0D]">
         <div className="absolute inset-0 z-0">
           <img
-            src="/src/assets/images/hero_cinematic_tattoo_1793799069695.jpg"
+            src="/assets/images/hero_cinematic_tattoo_1793799069695.jpg"
             alt="Studio consultation bay"
             className="w-full h-full object-cover object-center filter brightness-[0.38] contrast-[1.1]"
             referrerPolicy="no-referrer"
